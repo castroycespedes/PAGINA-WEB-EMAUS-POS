@@ -3,6 +3,8 @@ import { commercialPlans, formatPlanPrice, getPlanDemoMessage, plansPromotion } 
 import { getWhatsAppMessage } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { MotionCard } from "@/components/ui/MotionCard";
+import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 function PlanCard({ plan }) {
@@ -11,7 +13,7 @@ function PlanCard({ plan }) {
   const terminalLabel = plan.terminals === 1 ? "1 terminal" : `${plan.terminals} terminales`;
 
   return (
-    <article
+    <MotionCard
       className={`relative flex h-full flex-col rounded-brand border p-6 shadow-card transition duration-200 hover:-translate-y-1 hover:shadow-soft motion-reduce:transform-none ${
         isFeatured
           ? "border-brand-cyan bg-[linear-gradient(180deg,#08c7e8_0%,#eff7ff_34%,#ffffff_100%)]"
@@ -45,13 +47,13 @@ function PlanCard({ plan }) {
           Pedir demo
         </Button>
       </div>
-    </article>
+    </MotionCard>
   );
 }
 
 export function PricingSection() {
   return (
-    <section className="bg-[linear-gradient(180deg,#eff7ff_0%,#ffffff_100%)] py-16 sm:py-20" id="planes">
+    <MotionSection className="bg-[linear-gradient(180deg,#eff7ff_0%,#ffffff_100%)] py-16 sm:py-20" id="planes">
       <Container>
         <SectionHeading
           eyebrow="Planes"
@@ -81,6 +83,6 @@ export function PricingSection() {
           ))}
         </div>
       </Container>
-    </section>
+    </MotionSection>
   );
 }

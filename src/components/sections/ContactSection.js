@@ -3,11 +3,12 @@ import { company } from "@/data/company";
 import { getEmailLink, getWhatsAppMessage } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ContactSection() {
   return (
-    <section className="bg-white py-16 sm:py-20" id="soporte">
+    <MotionSection className="bg-white py-16 sm:py-20" id="soporte">
       <Container>
         <div className="rounded-brand border border-brand-border bg-[radial-gradient(circle_at_top_right,#d7f8ff,transparent_34%),linear-gradient(135deg,#ffffff_0%,#eff7ff_100%)] p-6 shadow-card sm:p-8 lg:p-10">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.8fr]">
@@ -40,6 +41,6 @@ export function ContactSection() {
           </div>
         </div>
       </Container>
-    </section>
+    </MotionSection>
   );
 }

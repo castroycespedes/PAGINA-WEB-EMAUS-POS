@@ -4,6 +4,7 @@ import { company } from "@/data/company";
 import { getWhatsAppMessage } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { MotionSection } from "@/components/ui/MotionSection";
 
 const trustItems = [
   { label: "Fácil de usar", icon: Rocket },
@@ -108,7 +109,7 @@ export function HeroSection() {
   const whatsappLink = getWhatsAppMessage();
 
   return (
-    <section
+    <MotionSection
       className="relative isolate overflow-hidden bg-[radial-gradient(circle_at_85%_12%,#d7f8ff_0%,transparent_28%),linear-gradient(180deg,#ffffff_0%,#eff7ff_100%)] pb-16 pt-10 sm:pb-20 lg:pt-14"
       id="inicio"
     >
@@ -148,6 +149,6 @@ export function HeroSection() {
         </div>
         <ProductMockup />
       </Container>
-    </section>
+    </MotionSection>
   );
 }

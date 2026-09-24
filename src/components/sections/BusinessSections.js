@@ -16,6 +16,8 @@ import {
 import { businessFeatures, businessTypes } from "@/data/business";
 import { company } from "@/data/company";
 import { Container } from "@/components/ui/Container";
+import { MotionCard } from "@/components/ui/MotionCard";
+import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const iconMap = {
@@ -42,12 +44,12 @@ function BusinessTypeCard({ item }) {
   const Icon = iconMap[item.icon];
 
   return (
-    <article className="flex min-h-32 flex-col items-center justify-center rounded-brand border border-brand-border bg-white p-5 text-center shadow-card transition duration-200 hover:-translate-y-1 hover:border-brand-cyan hover:shadow-soft motion-reduce:transform-none">
+    <MotionCard className="flex min-h-32 flex-col items-center justify-center rounded-brand border border-brand-border bg-white p-5 text-center shadow-card transition duration-200 hover:border-brand-cyan hover:shadow-soft motion-reduce:transform-none">
       <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-pale text-brand-blue">
         <Icon aria-hidden="true" size={28} strokeWidth={2.4} />
       </span>
       <h3 className="mt-4 text-base font-black leading-tight text-brand-navy">{item.title}</h3>
-    </article>
+    </MotionCard>
   );
 }
 
@@ -69,7 +71,7 @@ function BusinessFeatureCard({ item }) {
   const Icon = iconMap[item.icon];
 
   return (
-    <article className="rounded-brand border border-white/15 bg-white/10 p-4 text-white shadow-card backdrop-blur transition duration-200 hover:-translate-y-1 hover:border-brand-cyan/80 hover:bg-white/15 motion-reduce:transform-none">
+    <MotionCard className="rounded-brand border border-white/15 bg-white/10 p-4 text-white shadow-card backdrop-blur transition duration-200 hover:border-brand-cyan/80 hover:bg-white/15 motion-reduce:transform-none">
       <div className="flex items-start gap-4">
         <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-brand-cyan">
           <Icon aria-hidden="true" size={25} />
@@ -82,7 +84,7 @@ function BusinessFeatureCard({ item }) {
           <p className="mt-2 text-sm leading-6 text-blue-100">{item.description}</p>
         </div>
       </div>
-    </article>
+    </MotionCard>
   );
 }
 
@@ -168,7 +170,7 @@ function DashboardMockup() {
 
 export function BusinessTypesSection() {
   return (
-    <section className="bg-brand-pale py-16 sm:py-20" id="sectores">
+    <MotionSection className="bg-brand-pale py-16 sm:py-20" id="sectores">
       <Container>
         <SectionHeading
           eyebrow="Sectores"
@@ -181,13 +183,13 @@ export function BusinessTypesSection() {
           ))}
         </div>
       </Container>
-    </section>
+    </MotionSection>
   );
 }
 
 export function BusinessFeaturesSection() {
   return (
-    <section
+    <MotionSection
       className="relative isolate overflow-hidden bg-brand-navy py-16 text-white sm:py-20"
       id="caracteristicas"
     >
@@ -215,6 +217,6 @@ export function BusinessFeaturesSection() {
         </div>
         <DashboardMockup />
       </Container>
-    </section>
+    </MotionSection>
   );
 }

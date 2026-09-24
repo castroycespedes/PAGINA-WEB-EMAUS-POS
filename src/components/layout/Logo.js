@@ -19,7 +19,7 @@ export function Logo({ inverted = false }) {
             inverted ? "text-white" : "text-brand-navy"
           }`}
         >
-          EMAUS <span className="text-brand-cyan">POS</span>
+          EMAUS <span className={inverted ? "text-brand-cyan" : "text-brand-electric"}>POS</span>
         </span>
         <span
           className={`mt-1 hidden text-[9px] font-bold uppercase tracking-normal sm:block lg:text-[10px] ${

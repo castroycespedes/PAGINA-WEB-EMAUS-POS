@@ -20,8 +20,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={inter.variable}>
       <body>
+        <a
+          className="sr-only z-[60] rounded-md bg-white px-4 py-3 font-semibold text-brand-navy shadow-soft focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          href="#contenido"
+        >
+          Saltar al contenido
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="contenido">{children}</main>
         <Footer />
         <FloatingWhatsApp />
       </body>
