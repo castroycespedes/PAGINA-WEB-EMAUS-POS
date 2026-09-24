@@ -3,6 +3,7 @@ import {
   BusinessFeaturesSection,
   BusinessTypesSection,
 } from "@/components/sections/BusinessSections";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <BusinessTypesSection />
       <BusinessFeaturesSection />
       <PricingSection />
+      <ContactSection />
     </>
   );
 }

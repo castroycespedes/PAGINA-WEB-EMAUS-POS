@@ -4,3 +4,7 @@ export function getWhatsAppMessage(customMessage) {
   const message = customMessage || `Hola, quiero informacion sobre ${company.name}.`;
   return `${company.whatsappHref}?text=${encodeURIComponent(message)}`;
 }
+
+export function getEmailLink(customSubject = company.emailSubject) {
+  return `${company.emailHref}?subject=${encodeURIComponent(customSubject)}`;
+}

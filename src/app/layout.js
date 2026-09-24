@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { Header } from "@/components/layout/Header";
 import { company } from "@/data/company";
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );
