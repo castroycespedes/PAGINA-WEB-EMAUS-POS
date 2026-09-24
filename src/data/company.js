@@ -2,7 +2,7 @@ export const company = {
   name: "EMAUS POS",
   developer: "CENTRIVOSOFT",
   description: "Centro de Soluciones de Software",
-  tagline: "Ventas, facturacion, control e inventario",
+  tagline: "Ventas, facturación, control e inventario",
   whatsapp: "+57 300 410 7145",
   whatsappHref: "https://wa.me/573004107145",
   email: "centrivosoft@gmail.com",
@@ -13,13 +13,13 @@ export const company = {
   },
   referenceDesign: {
     src: "/images/emaus-pos-diseno-base.png",
-    alt: "Diseno base de referencia para EMAUS POS",
+    alt: "Diseño base de referencia para EMAUS POS",
   },
 };
 
 export const navigation = [
   { label: "Inicio", href: "/" },
-  { label: "Caracteristicas", href: "#caracteristicas" },
+  { label: "Características", href: "#caracteristicas" },
   { label: "Sectores", href: "#sectores" },
   { label: "Planes", href: "#planes" },
   { label: "Soporte", href: "#soporte" },
