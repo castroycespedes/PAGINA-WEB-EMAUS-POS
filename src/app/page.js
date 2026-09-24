@@ -3,6 +3,7 @@ import {
   BusinessFeaturesSection,
   BusinessTypesSection,
 } from "@/components/sections/BusinessSections";
+import { PricingSection } from "@/components/sections/PricingSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <BusinessTypesSection />
       <BusinessFeaturesSection />
+      <PricingSection />
     </>
   );
 }

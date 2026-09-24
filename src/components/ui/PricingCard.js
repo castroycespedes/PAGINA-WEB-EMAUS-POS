@@ -16,11 +16,6 @@ export function PricingCard({
         highlighted ? "border-brand-cyan ring-2 ring-brand-cyan/30" : "border-brand-border"
       }`}
     >
-      {highlighted ? (
-        <span className="absolute right-5 top-0 -translate-y-1/2 rounded-full bg-brand-blue px-3 py-1 text-xs font-bold text-white">
-          Mas popular
-        </span>
-      ) : null}
       <h3 className="text-xl font-black text-brand-navy">{title}</h3>
       {subtitle ? <p className="mt-1 text-sm font-semibold text-brand-muted">{subtitle}</p> : null}
       <p className="mt-5 text-4xl font-black text-brand-navy">{price}</p>
