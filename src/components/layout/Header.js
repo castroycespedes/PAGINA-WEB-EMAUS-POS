@@ -51,10 +51,12 @@ export function Header() {
             <NavLink key={item.href} item={item} />
           ))}
         </nav>
-        <Button href={getWhatsAppMessage()} className="hidden sm:inline-flex">
-          <MessageCircle aria-hidden="true" size={18} />
-          Pedir demo
-        </Button>
+        <div className="hidden lg:block">
+          <Button href={getWhatsAppMessage()}>
+            <MessageCircle aria-hidden="true" size={18} />
+            Pedir demo
+          </Button>
+        </div>
         <button
           aria-controls="mobile-navigation"
           aria-expanded={isOpen}

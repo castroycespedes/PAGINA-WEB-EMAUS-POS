@@ -10,19 +10,19 @@ export function Logo({ inverted = false }) {
         alt={company.logo.alt}
         width={64}
         height={64}
-        className="h-12 w-12 rounded-md object-contain"
+        className="h-10 w-10 rounded-md object-contain sm:h-11 sm:w-11 lg:h-12 lg:w-12"
         priority
       />
-      <span className="leading-none">
+      <span className="min-w-0 leading-none">
         <span
-          className={`block text-xl font-black tracking-normal ${
+          className={`block whitespace-nowrap text-lg font-black tracking-normal sm:text-xl ${
             inverted ? "text-white" : "text-brand-navy"
           }`}
         >
           EMAUS <span className="text-brand-cyan">POS</span>
         </span>
         <span
-          className={`mt-1 block text-[10px] font-bold uppercase tracking-normal ${
+          className={`mt-1 hidden text-[9px] font-bold uppercase tracking-normal sm:block lg:text-[10px] ${
             inverted ? "text-blue-100" : "text-brand-muted"
           }`}
         >
