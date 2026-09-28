@@ -46,12 +46,18 @@ export function Footer() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <MessageCircle aria-hidden="true" size={18} />
+                <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm">
+                  <MessageCircle aria-hidden="true" size={17} strokeWidth={2.5} />
+                </span>
                 {company.whatsapp}
               </a>
               <a className="flex items-center gap-2 hover:text-white" href={getEmailLink()}>
                 <Mail aria-hidden="true" size={18} />
                 {company.email}
+              </a>
+              <a className="flex items-center gap-2 hover:text-white" href={getEmailLink(company.supportEmailHref)}>
+                <Mail aria-hidden="true" size={18} />
+                {company.supportEmail}
               </a>
             </div>
           </div>

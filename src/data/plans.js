@@ -14,7 +14,8 @@ export const commercialPlans = [
     price: 60000,
     currency: "COP",
     billingPeriod: "al mes",
-    features: ["1 terminal"],
+    subtitle: "Para comenzar a vender con orden",
+    features: ["1 terminal", "Facturación electrónica", "Soporte 24/7", "Inventario y caja"],
   },
   {
     id: "profesional",
@@ -24,7 +25,8 @@ export const commercialPlans = [
     currency: "COP",
     billingPeriod: "al mes",
     featured: true,
-    features: ["3 terminales"],
+    subtitle: "Para negocios que están creciendo",
+    features: ["3 terminales", "Facturación electrónica", "Soporte 24/7", "Reportes de ventas"],
   },
   {
     id: "empresarial",
@@ -33,7 +35,8 @@ export const commercialPlans = [
     price: 120000,
     currency: "COP",
     billingPeriod: "al mes",
-    features: ["5 terminales"],
+    subtitle: "Para operaciones con más movimiento",
+    features: ["5 terminales", "Facturación electrónica", "Soporte 24/7", "Gestión de clientes"],
   },
 ];
 

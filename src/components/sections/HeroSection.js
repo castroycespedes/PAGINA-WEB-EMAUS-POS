@@ -1,105 +1,41 @@
 import Image from "next/image";
 import { ArrowRight, Headphones, MessageCircle, Rocket, ShieldCheck } from "lucide-react";
-import { company } from "@/data/company";
 import { getWhatsAppMessage } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { MotionSection } from "@/components/ui/MotionSection";
 
 const trustItems = [
-  { label: "Fácil de usar", icon: Rocket },
-  { label: "Seguro y confiable", icon: ShieldCheck },
-  { label: "Soporte disponible", icon: Headphones },
+  { label: "Fácil de usar", description: "Aprende rápido y vende sin complicaciones.", icon: Rocket },
+  { label: "Seguro y confiable", description: "Información clara para operar con tranquilidad.", icon: ShieldCheck },
+  { label: "Soporte 24/7", description: "Acompañamiento cuando tu negocio lo necesita.", icon: Headphones },
 ];
 
 function ProductMockup() {
   return (
     <figure
-      aria-label="Mockup ilustrativo de EMAUS POS en monitor con escáner e impresora térmica"
-      className="relative mx-auto min-h-[330px] w-full max-w-[620px] sm:min-h-[430px] lg:min-h-[520px]"
+      aria-label="Vista real de EMAUS POS en un minimarket con punto de venta"
+      className="relative isolate mx-auto aspect-[16/9] w-full max-w-none overflow-hidden rounded-[1.5rem] border-4 border-white bg-[#061736] shadow-soft sm:rounded-[2rem] lg:h-full lg:aspect-auto lg:min-h-0 lg:self-stretch"
     >
-      <div className="absolute right-0 top-1 h-64 w-[30rem] max-w-[92vw] rotate-[-21deg] rounded-full border-[30px] border-brand-cyan/70 sm:h-80 sm:w-[42rem] sm:border-[42px]" />
-      <div className="absolute right-[4%] top-4 z-10 rounded-full bg-white/85 px-3 py-1 text-xs font-bold text-brand-navy shadow-card">
-        Mockup ilustrativo
-      </div>
-
-      <div className="absolute left-[7%] top-[12%] z-20 w-[78%] rotate-[-2deg] rounded-[1.25rem] bg-[#061736] p-3 shadow-soft sm:left-[9%] sm:w-[74%]">
-        <div className="rounded-[0.85rem] border border-blue-200/20 bg-white p-2">
-          <div className="grid aspect-[16/9] overflow-hidden rounded-lg bg-brand-pale sm:grid-cols-[0.28fr_1fr]">
-            <aside className="hidden bg-brand-navy p-3 sm:block">
-              <Image
-                src={company.logo.src}
-                alt=""
-                width={90}
-                height={40}
-                className="h-8 w-auto object-contain"
-              />
-              <div className="mt-5 grid gap-2">
-                {["Inicio", "Productos", "Inventario", "Clientes", "Reportes"].map((item, index) => (
-                  <span
-                    className={`h-6 rounded-md ${index === 0 ? "bg-brand-blue" : "bg-white/10"}`}
-                    key={item}
-                  />
-                ))}
-              </div>
-            </aside>
-            <div className="p-3 sm:p-4">
-              <div className="mb-3 flex items-center justify-between">
-                <span className="h-4 w-28 rounded-full bg-blue-100" />
-                <span className="h-7 w-20 rounded-full bg-brand-blue" />
-              </div>
-              <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                {["A", "B", "C", "D", "E", "F"].map((item) => (
-                  <div className="rounded-lg border border-brand-border bg-white p-2 shadow-card" key={item}>
-                    <span className="block aspect-square rounded-md bg-gradient-to-br from-orange-300 to-red-400" />
-                    <span className="mt-2 block h-2 rounded-full bg-blue-100" />
-                    <span className="mt-1 block h-2 w-2/3 rounded-full bg-blue-100" />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-3 grid grid-cols-[1fr_0.7fr] gap-3">
-                <div className="rounded-lg bg-white p-2 shadow-card">
-                  <div className="flex h-16 items-end gap-1">
-                    {[40, 70, 55, 90, 62].map((height) => (
-                      <span
-                        className="flex-1 rounded-t bg-brand-electric"
-                        key={height}
-                        style={{ height: `${height}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div className="rounded-lg bg-brand-blue p-2 text-white shadow-card">
-                  <span className="block h-2 rounded-full bg-white/80" />
-                  <span className="mt-2 block h-6 rounded-md bg-white/20" />
-                  <span className="mt-2 block h-6 rounded-md bg-white/20" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mx-auto h-6 w-[22%] bg-[#061736]" />
-        <div className="mx-auto h-4 w-[42%] rounded-t-lg bg-[#061736]" />
-      </div>
-
-      <div className="absolute bottom-[18%] left-[3%] z-30 hidden w-[26%] rotate-[-8deg] rounded-full bg-[#071225] p-3 shadow-soft sm:block">
-        <div className="h-8 rounded-full bg-brand-blue shadow-[0_0_18px_rgba(8,199,232,0.8)]" />
-        <div className="mx-auto mt-2 h-10 w-4 rounded-b-lg bg-[#071225]" />
-      </div>
-
-      <div className="absolute bottom-[8%] right-[3%] z-30 w-[34%] min-w-36 rounded-2xl bg-[#071225] p-3 shadow-soft sm:right-[2%]">
-        <div className="absolute left-[12%] top-[-24px] h-8 w-[76%] rounded-t-md border border-brand-border bg-white" />
-        <div className="relative rounded-xl border border-white/10 bg-[#0b2859] p-3">
-          <Image
-            src={company.logo.src}
-            alt=""
-            width={92}
-            height={42}
-            className="h-7 w-auto object-contain"
-          />
-          <div className="mt-4 h-3 rounded-full bg-white/15" />
-          <div className="mt-2 h-3 w-2/3 rounded-full bg-white/15" />
-        </div>
+      <Image
+        src="/images/emaus-pos-hero-real.png"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="scale-110 object-cover opacity-35 blur-xl"
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(8,124,250,0.35),transparent_58%),linear-gradient(180deg,rgba(6,23,54,0.18),rgba(6,23,54,0.7))]" />
+      <Image
+        src="/images/emaus-pos-hero-real.png"
+        alt="EMAUS POS en un comercio con pantalla de ventas, lector e impresora térmica"
+        fill
+        priority
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="z-10 object-contain p-2 sm:p-3 lg:p-5"
+      />
+      <div className="absolute inset-x-4 bottom-4 rounded-full bg-brand-navy/85 px-4 py-2 text-center text-xs font-bold text-white shadow-card backdrop-blur sm:inset-x-auto sm:right-5 sm:px-5">
+        Una operación más clara, rápida y profesional
       </div>
     </figure>
   );
@@ -115,7 +51,7 @@ export function HeroSection() {
     >
       <div className="pointer-events-none absolute left-[-20%] top-[-18rem] h-[36rem] w-[52rem] rounded-full bg-white" />
       <div className="pointer-events-none absolute bottom-[-14rem] right-[-18%] h-[26rem] w-[42rem] rounded-full bg-brand-blue/10" />
-      <Container className="relative grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <Container className="relative grid items-stretch gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="max-w-2xl">
           <p className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-xs font-black uppercase tracking-normal text-brand-navy">
             Software de punto de venta
@@ -131,18 +67,21 @@ export function HeroSection() {
               Pedir demo
               <ArrowRight aria-hidden="true" size={19} />
             </Button>
-            <Button href={whatsappLink} size="lg" variant="outline">
+            <Button href={whatsappLink} size="lg" variant="success">
               <MessageCircle aria-hidden="true" size={19} />
               Escríbenos ahora
             </Button>
           </div>
           <div className="mt-8 grid gap-4 text-sm font-semibold text-brand-navy sm:grid-cols-3">
-            {trustItems.map(({ icon: Icon, label }) => (
-              <div className="flex items-center gap-3" key={label}>
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-brand-blue shadow-card">
-                  <Icon aria-hidden="true" size={21} />
+            {trustItems.map(({ icon: Icon, label, description }) => (
+              <div className="flex items-start gap-3 rounded-2xl border border-white/80 bg-white/75 p-3 shadow-card backdrop-blur" key={label}>
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-blue text-white shadow-card ring-4 ring-brand-blue/10">
+                  <Icon aria-hidden="true" size={21} strokeWidth={2.4} />
                 </span>
-                <span>{label}</span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-black text-brand-navy">{label}</span>
+                  <span className="mt-1 block text-[11px] leading-5 text-brand-muted sm:text-xs">{description}</span>
+                </span>
               </div>
             ))}
           </div>

@@ -11,7 +11,7 @@ import { Logo } from "@/components/layout/Logo";
 
 function NavLink({ item, onClick }) {
   const className =
-    "rounded-md px-2 py-2 text-sm font-semibold text-brand-navy transition hover:text-brand-blue focus-visible:outline-brand-cyan";
+    "rounded-md px-2 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-white focus-visible:outline-brand-cyan";
 
   if (item.href === "/") {
     return (
@@ -43,9 +43,9 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-border bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-blue-950/30 bg-brand-navy shadow-card">
       <Container className="flex min-h-20 items-center justify-between gap-6">
-        <Logo />
+        <Logo inverted />
         <nav className="hidden items-center gap-4 md:flex" aria-label="Navegación principal">
           {navigation.map((item) => (
             <NavLink key={item.href} item={item} />
@@ -61,7 +61,7 @@ export function Header() {
           aria-controls="mobile-navigation"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-brand-border bg-white text-brand-navy shadow-card transition hover:border-brand-cyan hover:text-brand-blue md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white shadow-card transition hover:border-brand-cyan hover:text-brand-cyan md:hidden"
           onClick={() => setIsOpen((value) => !value)}
           type="button"
         >
@@ -75,7 +75,7 @@ export function Header() {
         <Container className="pb-5">
           <nav
             aria-label="Navegación móvil"
-            className="grid gap-1 rounded-brand border border-brand-border bg-white p-3 shadow-soft"
+            className="grid gap-1 rounded-brand border border-white/15 bg-brand-navy p-3 shadow-soft"
           >
             {navigation.map((item) => (
               <NavLink key={item.href} item={item} onClick={() => setIsOpen(false)} />

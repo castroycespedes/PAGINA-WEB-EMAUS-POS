@@ -1,6 +1,8 @@
 const variants = {
   primary:
-    "bg-[var(--brand-gradient)] text-white shadow-soft hover:-translate-y-0.5 hover:shadow-card",
+    "bg-brand-blue text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand-electric hover:shadow-card",
+  success:
+    "bg-[#20c863] text-white shadow-[0_12px_28px_rgba(32,200,99,0.25)] hover:-translate-y-0.5 hover:bg-[#16a958] hover:shadow-[0_16px_32px_rgba(32,200,99,0.32)]",
   outline:
     "border border-brand-blue bg-brand-white text-brand-navy hover:-translate-y-0.5 hover:border-brand-electric hover:bg-brand-pale",
   navy: "bg-brand-navy text-white shadow-card hover:-translate-y-0.5 hover:bg-[#09275d]",

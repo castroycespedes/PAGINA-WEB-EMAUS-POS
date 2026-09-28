@@ -5,6 +5,6 @@ export function getWhatsAppMessage(customMessage) {
   return `${company.whatsappHref}?text=${encodeURIComponent(message)}`;
 }
 
-export function getEmailLink(customSubject = company.emailSubject) {
-  return `${company.emailHref}?subject=${encodeURIComponent(customSubject)}`;
+export function getEmailLink(emailHref = company.emailHref, customSubject = company.emailSubject) {
+  return `${emailHref}?subject=${encodeURIComponent(customSubject)}`;
 }

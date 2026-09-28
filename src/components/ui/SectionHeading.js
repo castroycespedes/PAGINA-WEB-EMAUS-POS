@@ -5,7 +5,7 @@ export function SectionHeading({
   align = "center",
   className = "",
 }) {
-  const alignment = align === "left" ? "items-start text-left" : "items-center text-center";
+  const alignment = align === "left" ? "items-start text-left" : "items-center text-center mx-auto";
 
   return (
     <div className={`flex max-w-3xl flex-col ${alignment} ${className}`}>

@@ -8,6 +8,8 @@ export const company = {
   whatsappDemoMessage: "Hola, quiero recibir información y una demostración de EMAUS POS.",
   email: "centrivosoft@gmail.com",
   emailHref: "mailto:centrivosoft@gmail.com",
+  supportEmail: "soportecentrisoft2026@gmail.com",
+  supportEmailHref: "mailto:soportecentrisoft2026@gmail.com",
   emailSubject: "Información sobre EMAUS POS",
   logo: {
     src: "/images/emaus-pos-logo.png",

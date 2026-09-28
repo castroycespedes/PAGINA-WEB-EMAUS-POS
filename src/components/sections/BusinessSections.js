@@ -9,7 +9,6 @@ import {
   ShoppingCart,
   Store,
   Users,
-  Utensils,
   Wine,
   Wrench,
 } from "lucide-react";
@@ -31,7 +30,6 @@ const iconMap = {
   shoppingCart: ShoppingCart,
   store: Store,
   users: Users,
-  utensils: Utensils,
   wrench: Wrench,
 };
 
@@ -44,11 +42,21 @@ function BusinessTypeCard({ item }) {
   const Icon = iconMap[item.icon];
 
   return (
-    <MotionCard className="flex min-h-32 flex-col items-center justify-center rounded-brand border border-brand-border bg-white p-5 text-center shadow-card transition duration-200 hover:border-brand-cyan hover:shadow-soft motion-reduce:transform-none">
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-pale text-brand-blue">
-        <Icon aria-hidden="true" size={28} strokeWidth={2.4} />
-      </span>
-      <h3 className="mt-4 text-base font-black leading-tight text-brand-navy">{item.title}</h3>
+    <MotionCard className="group relative min-h-40 overflow-hidden rounded-brand border border-brand-border bg-brand-navy text-center shadow-card transition duration-200 hover:-translate-y-1 hover:shadow-soft motion-reduce:transform-none">
+      <Image
+        src={item.image}
+        alt={item.imageAlt}
+        fill
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 14vw"
+        className="object-cover opacity-75 transition duration-300 group-hover:scale-105 group-hover:opacity-90"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/35 to-transparent" />
+      <div className="relative flex min-h-40 flex-col items-center justify-end p-4">
+        <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/90 text-white shadow-card">
+          <Icon aria-hidden="true" size={21} strokeWidth={2.4} />
+        </span>
+        <h3 className="text-sm font-black leading-tight text-white sm:text-base">{item.title}</h3>
+      </div>
     </MotionCard>
   );
 }
@@ -71,9 +79,9 @@ function BusinessFeatureCard({ item }) {
   const Icon = iconMap[item.icon];
 
   return (
-    <MotionCard className="rounded-brand border border-white/15 bg-white/10 p-4 text-white shadow-card backdrop-blur transition duration-200 hover:border-brand-cyan/80 hover:bg-white/15 motion-reduce:transform-none">
+    <MotionCard className="rounded-brand border border-white/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.2),rgba(255,255,255,0.06))] p-4 text-white shadow-[0_16px_0_rgba(4,18,54,0.3),0_24px_44px_rgba(3,14,43,0.24)] backdrop-blur transition duration-200 hover:-translate-y-1 hover:border-brand-cyan hover:bg-white/20 hover:shadow-[0_18px_0_rgba(4,18,54,0.32),0_30px_50px_rgba(3,14,43,0.28)] motion-reduce:transform-none">
       <div className="flex items-start gap-4">
-        <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-brand-cyan">
+        <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-brand-cyan/60 bg-[linear-gradient(145deg,#087cfa,#0755d9)] text-white shadow-[inset_0_2px_0_rgba(255,255,255,0.3),0_8px_16px_rgba(1,10,40,0.35)]">
           <Icon aria-hidden="true" size={25} />
         </span>
         <div>
@@ -91,78 +99,23 @@ function BusinessFeatureCard({ item }) {
 function DashboardMockup() {
   return (
     <figure
-      aria-label="Mockup ilustrativo del dashboard EMAUS POS"
+      aria-label="Captura real del módulo de inventario de EMAUS POS"
       className="relative mx-auto w-full max-w-[560px] lg:max-w-none"
     >
       <div className="absolute right-[-18%] top-[-18%] h-64 w-[34rem] rotate-[-18deg] rounded-full border-[34px] border-brand-cyan/40" />
-      <div className="relative rounded-[1.25rem] bg-[#061736] p-3 shadow-soft">
-        <div className="overflow-hidden rounded-[0.9rem] border border-white/10 bg-white">
-          <div className="grid min-h-[300px] grid-cols-[0.32fr_1fr] bg-brand-pale sm:min-h-[360px]">
-            <aside className="bg-brand-navy p-4">
-              <Image
-                src={company.logo.src}
-                alt=""
-                width={110}
-                height={50}
-                className="h-9 w-auto object-contain"
-              />
-              <div className="mt-6 grid gap-3">
-                {["Inicio", "Ventas", "Inventario", "Clientes", "Reportes"].map((item, index) => (
-                  <span
-                    className={`h-7 rounded-md ${index === 0 ? "bg-brand-blue" : "bg-white/10"}`}
-                    key={item}
-                  />
-                ))}
-              </div>
-            </aside>
-            <div className="p-4 sm:p-5">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <span className="block h-3 w-28 rounded-full bg-blue-100" />
-                  <span className="mt-2 block h-5 w-40 rounded-full bg-brand-navy/10" />
-                </div>
-                <span className="h-9 w-24 rounded-full bg-brand-blue" />
-              </div>
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                {["$44.730", "$12.480", "1.250"].map((value) => (
-                  <div className="rounded-lg bg-white p-3 shadow-card" key={value}>
-                    <span className="block h-2 w-12 rounded-full bg-blue-100" />
-                    <span className="mt-3 block text-sm font-black text-brand-blue">{value}</span>
-                    <span className="mt-2 block h-2 rounded-full bg-blue-100" />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 grid gap-4 sm:grid-cols-[1.25fr_0.75fr]">
-                <div className="rounded-lg bg-white p-4 shadow-card">
-                  <span className="block h-3 w-24 rounded-full bg-brand-navy/10" />
-                  <div className="mt-5 flex h-28 items-end gap-2">
-                    {[48, 72, 55, 88, 64, 96].map((height) => (
-                      <span
-                        className="flex-1 rounded-t bg-brand-electric"
-                        key={height}
-                        style={{ height: `${height}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div className="rounded-lg bg-white p-4 shadow-card">
-                  <span className="block h-3 w-20 rounded-full bg-brand-navy/10" />
-                  <div className="mt-5 grid gap-3">
-                    {[1, 2, 3, 4].map((item) => (
-                      <div className="flex items-center gap-2" key={item}>
-                        <span className="h-8 w-8 rounded-md bg-brand-pale" />
-                        <span className="h-3 flex-1 rounded-full bg-blue-100" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="relative overflow-hidden rounded-[1.25rem] bg-[#061736] p-3 shadow-soft">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-[0.9rem] border border-white/10 bg-white">
+          <Image
+            src="/images/emaus-pos-dashboard-real.png"
+            alt="Pantalla real de inventario y productos de EMAUS POS"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
         </div>
       </div>
       <figcaption className="mt-4 text-center text-xs font-semibold text-blue-100">
-        Mockup ilustrativo del dashboard. No es una captura funcional del sistema.
+        Captura real del módulo de inventario de EMAUS POS.
       </figcaption>
     </figure>
   );
@@ -177,7 +130,7 @@ export function BusinessTypesSection() {
           title="Ideal para todo tipo de negocio"
           description="EMAUS POS se adapta a operaciones comerciales con venta directa, inventario y atención en caja."
         />
-        <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-7">
+        <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
           {businessTypes.map((item) => (
             <BusinessTypeCard item={item} key={item.title} />
           ))}
@@ -190,13 +143,21 @@ export function BusinessTypesSection() {
 export function BusinessFeaturesSection() {
   return (
     <MotionSection
-      className="relative isolate overflow-hidden bg-brand-navy py-16 text-white sm:py-20"
+      className="relative isolate overflow-hidden bg-[linear-gradient(135deg,#061737_0%,#0b2d6b_52%,#081b43_100%)] py-16 text-white sm:py-20"
       id="caracteristicas"
     >
+      <Image
+        src={company.logo.src}
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full scale-110 object-contain opacity-[0.16] mix-blend-screen"
+      />
       <div className="pointer-events-none absolute left-[-18%] top-[-10rem] h-[28rem] w-[44rem] rounded-full bg-brand-blue/30 blur-2xl" />
       <div className="pointer-events-none absolute bottom-[-12rem] right-[-16%] h-[30rem] w-[46rem] rounded-full bg-brand-cyan/20 blur-2xl" />
       <div className="pointer-events-none absolute right-[-10%] top-10 h-64 w-[38rem] rotate-[-16deg] rounded-full border-[32px] border-brand-electric/35" />
-      <Container className="relative grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+      <Container className="relative z-10 grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
         <div>
           <div className="max-w-xl">
             <p className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-normal text-brand-cyan">
@@ -206,7 +167,7 @@ export function BusinessFeaturesSection() {
               Funciones que impulsan tu negocio
             </h2>
             <p className="mt-3 text-base leading-7 text-blue-100">
-              Separé cada capacidad entre operativa y en desarrollo para mantener claro qué se puede comunicar hoy y qué requiere confirmación.
+              Conoce las herramientas que hacen más ágil la operación diaria de tu negocio.
             </p>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">

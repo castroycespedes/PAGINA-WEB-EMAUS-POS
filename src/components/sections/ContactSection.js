@@ -8,10 +8,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ContactSection() {
   return (
-    <MotionSection className="bg-white py-16 sm:py-20" id="soporte">
+    <MotionSection className="bg-brand-pale py-16 sm:py-20" id="soporte">
       <Container>
-        <div className="rounded-brand border border-brand-border bg-[radial-gradient(circle_at_top_right,#d7f8ff,transparent_34%),linear-gradient(135deg,#ffffff_0%,#eff7ff_100%)] p-6 shadow-card sm:p-8 lg:p-10">
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.8fr]">
+        <div className="relative overflow-hidden rounded-brand border border-brand-cyan/45 bg-[radial-gradient(circle_at_top_right,#ffffff_0%,transparent_30%),linear-gradient(135deg,#c9f3ff_0%,#a9e5fb_52%,#e5f8ff_100%)] p-6 shadow-soft sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-white/35 blur-2xl" />
+          <div className="pointer-events-none absolute -right-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-brand-cyan/25 blur-2xl" />
+          <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[1fr_0.8fr]">
             <SectionHeading
               align="left"
               eyebrow="Contacto"
@@ -25,17 +27,36 @@ export function ContactSection() {
                 rel="noopener noreferrer"
                 size="lg"
                 target="_blank"
+                variant="success"
               >
                 <MessageCircle aria-hidden="true" size={20} />
                 Hablar por WhatsApp
               </Button>
-              <Button href={getEmailLink()} size="lg" variant="outline">
+              <Button href={getEmailLink()} size="lg" variant="primary">
                 <Mail aria-hidden="true" size={20} />
                 Enviar correo
               </Button>
               <div className="rounded-brand border border-brand-border bg-white p-4 text-sm text-brand-muted sm:col-span-2 lg:col-span-1">
-                <p className="font-semibold text-brand-navy">{company.whatsapp}</p>
-                <p className="mt-1">{company.email}</p>
+                <a
+                  className="block font-bold text-brand-blue underline decoration-brand-cyan decoration-2 underline-offset-4 hover:text-brand-electric"
+                  href={getWhatsAppMessage(company.whatsappDemoMessage)}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {company.whatsapp}
+                </a>
+                <a
+                  className="mt-3 block font-bold text-brand-blue underline decoration-brand-cyan decoration-2 underline-offset-4 hover:text-brand-electric"
+                  href={getEmailLink()}
+                >
+                  {company.email}
+                </a>
+                <a
+                  className="mt-3 block font-bold text-brand-blue underline decoration-brand-cyan decoration-2 underline-offset-4 hover:text-brand-electric"
+                  href={getEmailLink(company.supportEmailHref)}
+                >
+                  {company.supportEmail}
+                </a>
               </div>
             </div>
           </div>
