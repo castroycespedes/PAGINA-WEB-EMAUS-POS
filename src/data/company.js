@@ -11,6 +11,7 @@ export const company = {
   supportEmail: "soportecentrisoft2026@gmail.com",
   supportEmailHref: "mailto:soportecentrisoft2026@gmail.com",
   emailSubject: "Información sobre EMAUS POS",
+  portalHref: process.env.NEXT_PUBLIC_PORTAL_URL || "#portal",
   logo: {
     src: "/images/emaus-pos-logo.png",
     alt: "Logo de EMAUS POS",

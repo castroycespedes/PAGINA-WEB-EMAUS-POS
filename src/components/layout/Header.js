@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { LogIn, Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { navigation } from "@/data/company";
+import { company, navigation } from "@/data/company";
 import { getWhatsAppMessage } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -51,7 +51,11 @@ export function Header() {
             <NavLink key={item.href} item={item} />
           ))}
         </nav>
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button href={company.portalHref} variant="outline">
+            <LogIn aria-hidden="true" size={18} />
+            Iniciar sesión
+          </Button>
           <Button href={getWhatsAppMessage()}>
             <MessageCircle aria-hidden="true" size={18} />
             Pedir demo
@@ -82,6 +86,15 @@ export function Header() {
             ))}
             <Button
               className="mt-2 w-full"
+              href={company.portalHref}
+              onClick={() => setIsOpen(false)}
+              variant="outline"
+            >
+              <LogIn aria-hidden="true" size={18} />
+              Iniciar sesión
+            </Button>
+            <Button
+              className="w-full"
               href={getWhatsAppMessage()}
               onClick={() => setIsOpen(false)}
             >
